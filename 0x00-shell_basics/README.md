@@ -1,1 +1,1 @@
-script that prints the absolute path name of the current working directory
+script tha changes the working directory to the user’s home directory
