@@ -1,1 +1,1 @@
-Display current directory contents
+Command for making a new directory
