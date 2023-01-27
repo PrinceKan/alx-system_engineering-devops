@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#  This is a Bash script that stops process that itterate 
+# "To infinity and beyond" when 4-to_infinity_and_beyond runs 
+pkill -f 4-to_infinity_and_beyond
