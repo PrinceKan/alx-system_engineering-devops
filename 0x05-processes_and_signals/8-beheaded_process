@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This is Bash script that kills the process "To infinity and beyond"  that itterate when 7-highlander runs
+pkill -9 -f 7-highlander
