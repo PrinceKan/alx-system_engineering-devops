@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Bash script that installs nginx on our web-01 server
+# Nginx should be listening on port 80
+# When querying Nginx at its root / with a GET request
+# (requesting a page) using curl, it must return a page
+# that contains the string Hello World!
+
+apt-get update
+apt-get install -y nginx
+sed -i 's/^listen\s*80.*/listen 80 default_server;/g' /etc/nginx/sites-available/default
+echo "Hello World!" | tee /var/www/html/index.html > /dev/null
+sudo service nginx restart
