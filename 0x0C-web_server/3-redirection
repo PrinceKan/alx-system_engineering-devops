@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
-# Configure your Nginx server so that /redirect_me 
 # is redirecting to another page
-apt-get -y update
-apt-get install -y nginx
-new_string="location;\n\tlocation \/redirect_me {\n\t\treturn 301 https:\/\/twitter.com;\n\t}"
-sed -i "s/location;/$new_string/" /etc/nginx/sites-available/default
-service nginx restart
+apt-get update
+apt-get install nginx -y
+echo "Hello World!" | tee /var/www/html/index.html > /dev/null
+close_curly="\t}"
+new_string="\t}\n\n\tlocation \/redirect_me {\n\t\treturn 301 https:\/\/twitter.com;\n\t}"
+sed -i "s/$close_curly/$new_string/1" /etc/nginx/sites-available/default
+service nginx start
+service nginx reload
