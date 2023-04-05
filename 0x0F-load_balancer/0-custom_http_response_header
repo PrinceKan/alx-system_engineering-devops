@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 # Install Nginx
 # Add custom header to Nginx configuration
 # Restart Nginx to apply changes
