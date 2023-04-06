@@ -9,8 +9,8 @@ apt-get install haproxy=2.6.\* -y
 service haproxy status
 
 #configure server with the right hostnames
-frontend="\nfrontend http-in\n\tbind *:80\n\tdefault_backend server\n"
-backend="\nbackend server\n\tbalance roundrobin\n\tserver 109378-web-01 54.157.139.45:80 check\n\tserver 109378-web-02 52.201.220.160 check"
+frontend="\nfrontend http-in\n\tmode http\n\tbind *:80\n\tdefault_backend server\n"
+backend="\nbackend server\n\tbalance roundrobin\n\tserver 109378-web-01 54.157.139.45:80 check\n\tserver 109378-web-02 52.201.220.160:80 check"
 
 echo -e "$frontend$backend" >> /etc/haproxy/haproxy.cfg
 
