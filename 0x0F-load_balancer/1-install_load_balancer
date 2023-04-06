@@ -6,7 +6,7 @@ apt-get update
 apt-get install haproxy=2.6.\* -y
 
 #Enable HAproxy init script
-service haproxy status
+sudo service haproxy enable
 
 #configure server with the right hostnames
 frontend="\nfrontend http-in\n\tmode http\n\tbind *:80\n\tdefault_backend servers\n"
