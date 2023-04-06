@@ -1,0 +1,6 @@
+ssue : (7) Failed to connect to 0 port 80: Connection refused
+# create a link and delete the existing file
+
+ln -f /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx reload
+service nginx restart
